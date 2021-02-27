@@ -31,20 +31,18 @@ const refs = {
 refs.createBtn.addEventListener('click', onInputAmount )
 refs.clearBtn.addEventListener('click', onDestroyBoxes)
 function onInputAmount(event) { 
-  let amount = Number(refs.input.value);
-  onCreateBoxes(amount);
+  let numberOfBoxes = Number(refs.input.value);
+  onCreateBoxes(numberOfBoxes);
 }
 function onCreateBoxes(amount) {
-  const baseSize = 30;
- const fragment = document.createDocumentFragment();
-  for (var i = 0; i < amount; i++) {
-    const reSize = baseSize + i * 10;
+  for (let i = 0; i < amount; i+=1) {
+    const reSize = 30 + i * 10;
     const box = document.createElement("div");
    box.style.cssText = `width: ${reSize}px; height: ${reSize}px; background-color: rgba( ${random()} , ${random()} , ${random()} )`;
-    fragment.appendChild(box);
+    refs.boxes.append(box);
   }
-  refs.boxes.appendChild(fragment);
 }
+
 function onDestroyBoxes() { 
   refs.boxes.textContent = '';
 }
