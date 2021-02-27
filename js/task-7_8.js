@@ -28,19 +28,15 @@ const refs = {
   createBtn: document.querySelector('button[data-action="render"]'),
  boxes: document.getElementById('boxes'),
 }
-
 refs.createBtn.addEventListener('click', onInputAmount )
 refs.clearBtn.addEventListener('click', onDestroyBoxes)
-
-
 function onInputAmount(event) { 
   let amount = Number(refs.input.value);
   onCreateBoxes(amount);
 }
-
 function onCreateBoxes(amount) {
   const baseSize = 30;
-  var fragment = document.createDocumentFragment();
+ const fragment = document.createDocumentFragment();
   for (var i = 0; i < amount; i++) {
     const reSize = baseSize + i * 10;
     const box = document.createElement("div");
@@ -49,11 +45,9 @@ function onCreateBoxes(amount) {
   }
   refs.boxes.appendChild(fragment);
 }
-
 function onDestroyBoxes() { 
   refs.boxes.textContent = '';
 }
-
 function random() {
    return Math.floor(Math.random() * 256);
 }
