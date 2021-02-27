@@ -37,7 +37,7 @@ function onInputAmount(event) {
 function onCreateBoxes(amount) {
   const baseSize = 30;
  const fragment = document.createDocumentFragment();
-  for (var i = 0; i < amount; i++) {
+  for (let i = 0; i < amount; i++) {
     const reSize = baseSize + i * 10;
     const box = document.createElement("div");
    box.style.cssText = `width: ${reSize}px; height: ${reSize}px; background-color: rgba( ${random()} , ${random()} , ${random()} )`;
