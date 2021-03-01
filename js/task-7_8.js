@@ -12,16 +12,6 @@
 // Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
 // Создай функцию destroyBoxes(), которая очищает div#boxes.
 
-// <div id="controls">
-//   <input type="number" min="0" max="100" step="1" />
-//   <button type="button" data-action="render">Создать</button>
-//   <button type="button" data-action="destroy">Очистить</button>
-// </div>
-
-// <div id="boxes"></div>
-
-
-
 const refs = {
   input: document.querySelector('#controls>input'),
   clearBtn: document.querySelector('button[data-action="destroy"]'),

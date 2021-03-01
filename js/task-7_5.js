@@ -2,8 +2,6 @@
 //     подставляет его текущее значение в span#name - output.Если инпут пустой,
 //         в спане должна отображаться строка 'незнакомец'.
 
-// <input type="text" placeholder="Ваше имя?" id="name-input" />
-// <h1>Привет, <span id="name-output">незнакомец</span>!</h1>
 
 const refs = {
     nameInput: document.querySelector('#name-input'),
@@ -12,5 +10,8 @@ const refs = {
 refs.nameInput.addEventListener('input', onInputChange)
 
 function onInputChange(event) { 
+    if (refs.nameInput.value === '') {
+       return refs.nameOutput.innerHTML = 'незнакомец';
+    } 
     refs.nameOutput.textContent = event.currentTarget.value
 }
